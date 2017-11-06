@@ -1,0 +1,15 @@
+{
+  "name": "Badgerloop",
+  "version": "0.0.1",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^1.7.9"
+  },
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "d3": "^4.11.0"
+  }
+}
