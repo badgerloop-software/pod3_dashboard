@@ -7,6 +7,7 @@ const path = require('path');
 const url = require('url');
 let mainWindow;
 
+// This function creates a new window`
 function createWindow() {
     mainWindow = new BrowserWindow({width: 800, height: 800, center: true});
     mainWindow.loadURL(url.format({
