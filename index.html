@@ -4,8 +4,8 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="description" content="">
-	<meta name="author" content="">
-	<link rel="icon" href="../../../../favicon.ico">
+	<meta name="author" content="Flight-Software">
+
 
 	<title>Badgerloop Dashboard</title>
 
@@ -14,32 +14,33 @@
 
 	<!-- Custom styles for this template -->
 	<link href="dashboard.css" rel="stylesheet">
+    <link href="scrollbar.css" rel="stylesheet">
   </head>
 
   <body>
-	<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-	  <a class="navbar-brand" href="#">Badgerloop</a>
-	  <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-		<span class="navbar-toggler-icon"></span>
-	  </button>
-
-	  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-		<ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Page 2</a>
-            </li>
-		</ul>
-	  </div>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark justify-content-between">
+        <a class="navbar-brand" href="#" id="brand">
+            <img src="assets/icons/png/64x64.png" height="30" width="30" class="d-inline-block align-top bg-danger rounded" alt="">
+            Badgerloop
+        </a>
+        <form class="form-inline">
+            <button class="btn btn-dark font-weight-bold my-2 my-sm-0" type="button" id="minimize">
+                &#128469;  <!--minimize window character-->
+            </button>
+            <button class="btn btn-dark font-weight-bold my-2 my-sm-0" type="button" id="maximize">
+                &#128470;   <!--maximize window character-->
+            </button>
+            <button class="btn btn-dark font-weight-bold my-2 my-sm-0" type="button" id="close">
+                &#10005;    <!--Exit X character-->
+            </button>
+        </form>
 	</nav>
 
 	<div class="container-fluid">
 	  <div class="row">
 
 		<main class="col" role="main">
-            <p>  </p>
+            <br>
 
 		  <section class="row text-center placeholders">
               <div class="col">
@@ -52,47 +53,47 @@
                                       <tbody>
                                       <tr>
                                           <th scope="row">State</th>
-                                          <td>x</td>
+                                          <td class="data">x</td>
                                       </tr>
                                       <tr>
                                           <th scope="row">Stopping Distance</th>
-                                          <td>x</td>
+                                          <td class="data">x</td>
                                       </tr>
                                       <tr>
                                           <th scope="row">Strip Count</th>
-                                          <td>x</td>
+                                          <td class="data">x</td>
                                       </tr>
                                       <tr>
                                           <th scope="row">Position</th>
-                                          <td>x</td>
+                                          <td class="data">x</td>
                                       </tr>
                                       <tr>
                                           <th scope="row">Acceleration</th>
-                                          <td>x</td>
+                                          <td class="data">x</td>
                                       </tr>
                                       <tr>
                                           <th scope="row">Velocity</th>
-                                          <td>x</td>
+                                          <td class="data">x</td>
                                       </tr>
                                       <tr>
                                           <th scope="row">Percent Charge</th>
-                                          <td>x</td>
+                                          <td class="data">x</td>
                                       </tr>
                                       <tr>
                                           <th scope="row">Charge Remaining</th>
-                                          <td>x</td>
+                                          <td class="data">x</td>
                                       </tr>
                                       <tr>
                                           <th scope="row">Current</th>
-                                          <td>x</td>
+                                          <td class="data">x</td>
                                       </tr>
                                       <tr>
                                           <th scope="row">Battery Temperature</th>
-                                          <td>x</td>
+                                          <td class="data">x</td>
                                       </tr>
                                       <tr>
                                           <th scope="row">Voltage</th>
-                                          <td>x</td>
+                                          <td class="data">x</td>
                                       </tr>
                                       </tbody>
                                   </table>
@@ -146,7 +147,7 @@
                           <div class="container">
                               <div class="row">
                                   <div class="col-sm">
-                                      <button type="button" class="btn btn-secondary btn-sm">Fault</button>
+                                      <button id="10" type="button" class="btn btn-secondary btn-sm">Fault</button>
                                   </div>
                                   <div class="col-sm">
                                       <button type="button" class="btn btn-secondary btn-sm">Idle</button>
@@ -270,11 +271,13 @@
 	<!-- Bootstrap core JavaScript
 	================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-	<script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-	<script src="../../../../assets/js/vendor/popper.min.js"></script>
-	<script src="../../../../dist/js/bootstrap.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="renderer.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+	<!-- <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery.min.js"><\/script>')</script> -->
 	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-	<script src="../../../../assets/js/ie10-viewport-bug-workaround.js"></script>
+	<!-- <script src="../../../../assets/js/ie10-viewport-bug-workaround.js"></script> -->
   </body>
 </html>
