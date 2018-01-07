@@ -10,7 +10,6 @@ const maximizer = document.getElementById('maximize');
 const brand = document.getElementById('brand');
 const os = require("os");
 let data = document.getElementsByClassName('data');
-const ip = os.networkInterfaces()['Wi-Fi'][1]['address'];   //automatically gets your local ip, good for testing only
 const port = 3000;
 
 
@@ -36,6 +35,7 @@ maximizer.addEventListener('click', (err) => {
         maximizer.innerHTML = '&#128470;';
     }
 
+
 });
 
 
@@ -60,13 +60,13 @@ let sensorName = 'position'
 
 //The loop that will keep requesting the most recent data
 var requestLoop = setInterval(() => {
-    if (id == 100) {
+    if (id === 100) {
         id = 0;
     } else {
         id++;
     }
 
-    request('http://' + ip + ':' + port + '/' + sensorName + '/' + id + '/', (err, response, body) => {
+    request('http://localhost:' + port + '/' + sensorName + '/' + id + '/', (err, response, body) => {
         if (err) {
             return;
         }
