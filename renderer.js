@@ -2,8 +2,8 @@
 
 const electron = require('electron');
 const request = require('request');
-let stateControl = require('./stateManager');
-stateControl
+const stateControl = require('./stateManager');
+const frameStyle = require('./frameStyle');
 const myButton = document.getElementById("close");
 const minimizer = document.getElementById('minimize');
 const maximizer = document.getElementById('maximize');
