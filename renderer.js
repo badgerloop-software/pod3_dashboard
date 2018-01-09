@@ -2,15 +2,19 @@
 
 const electron = require('electron');
 const request = require('request');
-
+let stateControl = require('./stateManager');
+stateControl
 const myButton = document.getElementById("close");
 const minimizer = document.getElementById('minimize');
 const maximizer = document.getElementById('maximize');
+
 
 const brand = document.getElementById('brand');
 const os = require("os");
 let data = document.getElementsByClassName('data');
 const port = 3000;
+
+
 
 
 myButton.addEventListener('click', (err) => {
@@ -59,7 +63,7 @@ let sensorName = 'position'
 
 
 //The loop that will keep requesting the most recent data
-var requestLoop = setInterval(() => {
+const requestLoop = setInterval(() => {
     if (id === 100) {
         id = 0;
     } else {
