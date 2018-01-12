@@ -2,9 +2,14 @@
 // Brief: This has the top right menu controls
 // and other styling choices for the window itself
 
+const electron = require("electron");
 const closer = document.getElementById("close");
 const minimizer = document.getElementById('minimize');
 const maximizer = document.getElementById('maximize');
+const top = document.getElementById('nav_header');
+
+
+
 
 closer.addEventListener('click', (err) => {
     electron.remote.getCurrentWindow().close();

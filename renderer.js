@@ -1,4 +1,3 @@
-"use strict";
 
 const electron = require('electron');
 const request = require('request');
@@ -6,19 +5,11 @@ const stateControl = require('./stateManager');
 const frameStyle = require('./frameStyle');
 
 
-const os = require("os");
 let data = document.getElementsByClassName('data');
 const port = 3000;
 
-
-
-
-
-
-
-
 let id = 0;
-let sensorName = 'position'
+let sensorName = 'position';
 
 
 //The loop that will keep requesting the most recent data

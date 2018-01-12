@@ -17,8 +17,10 @@ function createWindow() {
         height: 650,
         center: true,
         frame: false,
+        minHeight:600,
+        modal: true,
         icon: path.join(__dirname,'/assets/icons/png/64x64.png'),
-        show: false
+        show: false,
     });
 
     mainWindow.loadURL(url.format({
@@ -36,7 +38,6 @@ function createWindow() {
         mainWindow = null;
     });
 
-    //const net = require('electron').net
     ready = true;
 
 

@@ -44,7 +44,7 @@ class State{
     }
 }
 
-//
+//All the states
 const fault = new State("fault");
 const idle = new State("idle");
 const ready = new State("ready");
@@ -54,7 +54,7 @@ const braking = new State("braking");
 const stateList = [fault,idle,ready,pushing,coasting,braking];
 
 const initialEvent = new MouseEvent('click');
-idle.stateButton.dispatchEvent(initialEvent);
+idle.stateButton.dispatchEvent(initialEvent);   //sets idle as the initial default state
 
 //Every time the state changes it sets the other buttons to inactive
 stateMaster.addEventListener("stateChange", (e)=> {
