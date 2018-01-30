@@ -1,5 +1,3 @@
-"use strict";
-
 const electron = require('electron');
 const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
@@ -11,10 +9,10 @@ let ready = false;
 
 
 function createWindow() {
-
     mainWindow = new BrowserWindow({
         width: 900,
-        height: 650,
+        height: 700,
+        minWidth: 815,
         center: true,
         frame: false,
         minHeight:600,
@@ -40,14 +38,11 @@ function createWindow() {
 
     ready = true;
 
-
-
 }
 
 
-
 app.on('ready', () => {
-    createWindow()
+    createWindow();
 
 });
 
