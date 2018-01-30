@@ -1,8 +1,44 @@
-const button1 = document.getElementById("0");
 
-button1.addEventListener('click', function (event) {
-    alert("ALERT");
-});
+const electron = require('electron');
+const request = require('request');
+const stateControl = require('./stateManager');
+const frameStyle = require('./frameStyle');
+
+
+let data = document.getElementsByClassName('data');
+const port = 3000;
+
+let id = 0;
+let sensorName = 'position';
+
+
+//The loop that will keep requesting the most recent data
+const requestLoop = setInterval(() => {
+    if (id === 100) {
+        id = 0;
+    } else {
+        id++;
+    }
+
+    request('http://localhost:' + port + '/' + sensorName + '/' + id + '/', (err, response, body) => {
+        if (err) {
+            return;
+        }
+        console.log(`STATUS: ${response.statusCode}`)
+        console.log(`HEADERS: ${JSON.stringify(response.headers)}`)
+        console.log(`BODY: ` + body)
+
+        //myButton.innerHTML = body;
+        for (let i = 0; i < data.length; i++) {
+             data[i].innerHTML = body;
+        }
+
+    })
+}, 100);
+
+
+//requestLoop.start();
+
 
 
 
